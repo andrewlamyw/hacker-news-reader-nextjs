@@ -12,7 +12,7 @@ const Item = ({ id }) => {
     fetcher
   );
 
-  return <li>{data?.title}</li>;
+  return <li className="py-4 flex">{data?.title}</li>;
 };
 
 export default function Home() {
@@ -30,10 +30,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {topStoriesIdChunck &&
-          topStoriesIdChunck[page - 1]?.map((id) => (
-            <Item id={id} key={id}></Item>
-          ))}
+        <ul className="divide-y divide-gray-200">
+          {topStoriesIdChunck &&
+            topStoriesIdChunck[page - 1]?.map((id) => (
+              <Item id={id} key={id}></Item>
+            ))}
+        </ul>
       </main>
 
       <footer className={styles.footer}>
