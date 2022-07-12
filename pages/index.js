@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import useSWR from 'swr';
 import chunk from 'lodash/chunk';
-import { useState } from 'react';
+import psl from 'psl';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -12,7 +13,23 @@ const Item = ({ id }) => {
     fetcher
   );
 
-  return <li className="py-4 flex">{data?.title}</li>;
+  return (
+    <li className="py-4">
+      <div>
+        <a href={data?.url} className="inline mr-1">
+          {data?.title}
+        </a>
+
+        <a className="inline-block text-slate-500 text-sm">
+          {data?.url && `(${psl.parse(new URL(data?.url).hostname).domain})`}
+        </a>
+      </div>
+
+      <div>
+        <span></span>
+      </div>
+    </li>
+  );
 };
 
 export default function Home() {
