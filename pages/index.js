@@ -32,7 +32,9 @@ const ListItem = ({ id }) => {
       <div className="opacity-50">
         <span>
           {item?.score} points by {item?.by}{" "}
-          <ReactTimeAgo date={item?.time * 1000} locale="en-US" />
+          {Number.isInteger(item?.time) && (
+            <ReactTimeAgo date={item?.time * 1000} />
+          )}
         </span>
       </div>
     </li>
