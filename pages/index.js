@@ -1,11 +1,16 @@
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
 import chunk from "lodash/chunk";
 import Head from "next/head";
 import Link from "next/link";
 import psl from "psl";
 import React, { useState } from "react";
+import ReactTimeAgo from "react-time-ago";
 import useSWR from "swr";
 import { useItem } from "../hooks.js";
 import styles from "../styles/Home.module.css";
+
+TimeAgo.addDefaultLocale(en);
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -24,8 +29,11 @@ const ListItem = ({ id }) => {
         </a>
       </div>
 
-      <div>
-        <span></span>
+      <div className="opacity-50">
+        <span>
+          {item?.score} points by {item?.by}{" "}
+          <ReactTimeAgo date={item?.time * 1000} locale="en-US" />
+        </span>
       </div>
     </li>
   );
