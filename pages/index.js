@@ -10,17 +10,17 @@ import { useItem } from "../hooks.js";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const ListItem = ({ id }) => {
-  const { data } = useItem(id);
+  const { item } = useItem(id);
 
   return (
     <li className="py-4">
       <div>
-        <Link href={data?.url || `/item/${id}`}>
-          <a className="mr-1">{data?.title}</a>
+        <Link href={item?.url || `/item/${id}`}>
+          <a className="mr-1">{item?.title}</a>
         </Link>
 
         <a className="inline-block text-slate-500 text-sm">
-          {data?.url && `(${psl.parse(new URL(data?.url).hostname).domain})`}
+          {item?.url && `(${psl.parse(new URL(item?.url).hostname).domain})`}
         </a>
       </div>
 

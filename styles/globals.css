@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 p {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 a {
   text-decoration: underline;
-  color: blue;
+  color: ;
 }
