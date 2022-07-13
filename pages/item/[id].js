@@ -47,7 +47,7 @@ const Item = () => {
         <hr className="my-10" />
 
         <ul>
-          {item?.kids.map((id) => (
+          {item?.kids?.map((id) => (
             <Comment id={id} key={id} />
           ))}
         </ul>
