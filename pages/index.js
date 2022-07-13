@@ -1,11 +1,11 @@
-import Head from "next/head";
-import React, { useState } from "react";
-import styles from "../styles/Home.module.css";
-import useSWR from "swr";
 import chunk from "lodash/chunk";
-import psl from "psl";
+import Head from "next/head";
 import Link from "next/link";
+import psl from "psl";
+import React, { useState } from "react";
+import useSWR from "swr";
 import { useItem } from "../hooks.js";
+import styles from "../styles/Home.module.css";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -40,7 +40,7 @@ export default function Home() {
   const topStoriesIdChunck = chunk(topStoriesId, 30);
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Hacker News Reader - Next.js</title>
       </Head>
@@ -53,12 +53,6 @@ export default function Home() {
             ))}
         </ul>
       </main>
-
-      <footer className={styles.footer}>
-        <a href="https://next.new" target="_blank" rel="noopener noreferrer">
-          Created with&nbsp;<b>next.new</b>&nbsp;⚡️
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
