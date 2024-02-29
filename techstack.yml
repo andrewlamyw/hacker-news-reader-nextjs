@@ -2,7 +2,7 @@ repo_name: andrewlamyw/hacker-news-reader-nextjs
 report_id: f87a04c0e62fb0d1f6b3325c9b91e812
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T08:33:00+00:00'
+timestamp: '2024-02-29T18:54:22+00:00'
 requested_by: andrewlamyw
 provider: github
 branch: main
@@ -42,7 +42,7 @@ tools:
   last_updated_by: andrewlamyw
   last_updated_on: 2022-07-12 18:00:16.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 12.2.2
   open_source: true
